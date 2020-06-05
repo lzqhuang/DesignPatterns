@@ -76,4 +76,17 @@ class TextElement implements RenderableInterface
     }
 }
 
+$form = new Form();
+$form->addElement(new TextElement('Email:'));
+$form->addElement(new InputElement());
+$embed = new Form();
+$embed->addElement(new TextElement('Password:'));
+$embed->addElement(new InputElement());
+$form->addElement($embed);
+
+$str = '<form>Email:<input type="text" /><form>Password:<input type="text" /></form></form>';
+var_dump($str === $form->render());
+
+
+
 
