@@ -1,6 +1,10 @@
 <?php
 
 /**
+ * 将抽象与实现分离，这样两者可以独立地改变。
+ */
+
+/**
  * 创建格式化接口。
  */
 interface FormatterInterface
