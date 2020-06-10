@@ -120,11 +120,14 @@ $storage = new StorageAdapter([1 => ['username' => 'domnikl', 'email' => 'lieble
 $mapper = new UserMapper($storage);
 
 $user = $mapper->findById(1);
-
 var_dump($user instanceof User);
 
 // NotMap
 $storage = new StorageAdapter([]);
 $mapper = new UserMapper($storage);
 
-$mapper->findById(1);
+try {
+    $use2 = $mapper->findById(1);
+} catch (Exception $e) {
+    var_dump($e->getMessage());
+}
