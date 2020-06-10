@@ -99,11 +99,10 @@ class JsonRenderer extends RendererDecorator
     }
 }
 
-$service = new Webservice('foobar');
-$service = new JsonRenderer($this->service);
+$webservice = new Webservice('foobar');
+$service = new JsonRenderer($webservice);
 
-var_dump('"foobar"'===$service->renderData());
-$service = new XmlRenderer($this->service);
+var_dump('"foobar"' === $service->renderData());
+$service = new XmlRenderer($webservice);
 
-var_dump('<?xml version="1.0"?><content>foobar</content>'===$service->renderData());
-
+var_dump('<?xml version="1.0"?><content>foobar</content>' === $service->renderData());
